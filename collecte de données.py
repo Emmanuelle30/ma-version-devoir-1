@@ -57,6 +57,18 @@ for ticker in ["APA", "ENB", "JBLU"]:
         print(extreme[["Date", ticker]])
 
 
+rendement_recherche = -0.178327
+
+for ticker in [ "ENB"]:
+
+    nb = np.isclose(
+        base_finale[ticker],
+        rendement_recherche,
+        atol=1e-6
+    ).sum()
+
+    print(f"{ticker} : {nb} occurrence(s)")
+
 
 base_finale.to_csv(
     "Base_Donnees_Finale.csv",
@@ -65,3 +77,6 @@ base_finale.to_csv(
 
 print("\nBase_Donnees_Finale.csv créée.")
 print(base_finale.head())
+print(base_finale.shape)
+
+
